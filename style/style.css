@@ -56,3 +56,108 @@ body{
         box-shadow: #D6D6E7 0 3px 7px inset;
         transform: translateY(2px);
       }
+
+      /* pour les boutons du jeu 2 */
+      /* source : https://uiverse.io/adamgiebl/good-mouse-67 */
+      .btnJeu2 {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgb(209, 238, 255);
+      border: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+      cursor: pointer;
+      transition-duration: 0.3s;
+      overflow: hidden;
+      position: relative;
+      text-decoration: none !important;
+    }
+
+    .edit-svgIcon {
+      width: 17px;
+      transition-duration: 0.3s;
+    }
+
+    .edit-svgIcon path {
+      fill: white;
+    }
+
+    .btnJeu2:hover {
+      width: 120px;
+      border-radius: 50px;
+      transition-duration: 0.3s;
+      background-color: rgb(209, 238, 255);
+      align-items: center;
+    }
+
+    .btnJeu2:hover .edit-svgIcon {
+      width: 20px;
+      transition-duration: 0.3s;
+      transform: translateY(60%);
+      -webkit-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      -ms-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+
+    #Coeur::before {
+      display: none;
+      content: "Coeur";
+      color: white;
+      transition-duration: 0.3s;
+      font-size: 2px;
+    }
+
+     #Poumon::before {
+      display: none;
+      content: "Poumon";
+      color: white;
+      transition-duration: 0.3s;
+      font-size: 2px;
+    }
+
+     #Rein::before {
+      display: none;
+      content: "Rein";
+      color: white;
+      transition-duration: 0.3s;
+      font-size: 2px;
+    }
+
+     #Intestin::before {
+      display: none;
+      content: "Intestin";
+      color: white;
+      transition-duration: 0.3s;
+      font-size: 2px;
+    }
+
+     #Cerveau::before {
+      display: none;
+      content: "Cerveau";
+      color: white;
+      transition-duration: 0.3s;
+      font-size: 2px;
+    }
+
+     #Estomac::before {
+      display: none;
+      content: "Estomac";
+      color: white;
+      transition-duration: 0.3s;
+      font-size: 2px;
+    }
+
+    .btnJeu2:hover::before {
+      display: block;
+      padding-right: 10px;
+      font-size: 13px;
+      opacity: 1;
+      transform: translateY(0px);
+      transition-duration: 0.3s;
+    }
