@@ -28,8 +28,8 @@
   width: 100%;
   
    /* Ajustez à la taille de votre image */
-  width: 600px;
-  height: 800px;
+  width: 700px;
+  height: 900px;
   margin: 0 auto; /* Centré l'image sur la page */
   border: 0px
 }
@@ -90,11 +90,43 @@
   border: 1px solid #333;
 }
 
-/* Pour que le mot se dépose au milieu de la boite */
+/* Pour que les mots se déposent au milieu de la boite */
+/* Faits avec Claude AI */
 .deposer {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px dashed #000000 !important;
+  border-radius: 6px;
+  background-color: rgba(255,255,255,0.6);
+}
+
+
+.deposer p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Positionne les mots à gauche, verticalement centré */
+#mots {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+/* Ce code est faits par Claude AI */
+#mots p {
+ margin: 0;
+  padding: 6px 10px;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  background-color: rgba(255,255,255,0.6);
+  color: #1a1a2e;
+  cursor: grab;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
 
 </style>
@@ -126,9 +158,11 @@
     //  trouver l'ID du mot (par ex: "txtCoeur")
     let idMot = ev.dataTransfer.getData("text");
     let motElement = document.getElementById(idMot);
-    let dépose = ev.target;
+
+    // Correction : ev.currentTarget pointe toujours sur la boîte, pas sur un enfant
+    let dépose = ev.currentTarget;
   
-    //pour que le mot se  dépose dans la boîte
+    //pour que le mot se dépose dans la boîte
     dépose.appendChild(motElement);
   
     
@@ -148,12 +182,14 @@
 
 <!-- Ceci crée un texte glissable avec un nom (par ex: "Poumon" qui déclenche la fonction "dragstartHandler" quand l'utilisateur commence à le glisser-->
 <!-- https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop_h1 -->
-<p id="txtPoumon" draggable="true" ondragstart="dragstartHandler(event)">Poumon</p> 
-<p id="txtCoeur" draggable="true" ondragstart="dragstartHandler(event)">Coeur</p>
-<p id="txtIntestin" draggable="true" ondragstart="dragstartHandler(event)">Intestin</p>
-<p id="txtRein" draggable="true" ondragstart="dragstartHandler(event)">Rein</p>
-<p id="txtEstomac" draggable="true" ondragstart="dragstartHandler(event)">Estomac</p>
-<p id="txtCerveau" draggable="true" ondragstart="dragstartHandler(event)">Cerveau</p>
+<div id="mots">
+  <p id="txtPoumon" draggable="true" ondragstart="dragstartHandler(event)">Poumon</p> 
+  <p id="txtCoeur" draggable="true" ondragstart="dragstartHandler(event)">Coeur</p>
+  <p id="txtIntestin" draggable="true" ondragstart="dragstartHandler(event)">Intestin</p>
+  <p id="txtRein" draggable="true" ondragstart="dragstartHandler(event)">Rein</p>
+  <p id="txtEstomac" draggable="true" ondragstart="dragstartHandler(event)">Estomac</p>
+  <p id="txtCerveau" draggable="true" ondragstart="dragstartHandler(event)">Cerveau</p>
+</div>
 
 <button class="btnMenu" onclick="window.location.href='index.html'"><img src="https://cdn-icons-png.flaticon.com/512/5895/5895964.png" height="35px"></button>
 </body>
