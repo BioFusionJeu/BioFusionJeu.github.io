@@ -165,7 +165,7 @@ body{
       content: "Estomac";
       color: white;
       transition-duration: 0.3s;
-      font-size: 2px;
+      font-size: 14px;
     }
     #Estomac:hover::before {
     display: block;
