@@ -110,7 +110,10 @@ body{
       content: "Coeur";
       color: white;
       transition-duration: 0.3s;
-      font-size: 2px;
+      font-size: 14px;
+    }
+    #Coeur:hover::before {
+    display: block;
     }
 
      #Poumon::before {
@@ -118,7 +121,10 @@ body{
       content: "Poumon";
       color: white;
       transition-duration: 0.3s;
-      font-size: 2px;
+      font-size: 14px;
+    }
+    #Poumon:hover::before {
+    display: block;
     }
 
      #Rein::before {
@@ -126,7 +132,10 @@ body{
       content: "Rein";
       color: white;
       transition-duration: 0.3s;
-      font-size: 2px;
+      font-size: 14px;
+    }
+    #Rein:hover::before {
+    display: block;
     }
 
      #Intestin::before {
@@ -134,7 +143,10 @@ body{
       content: "Intestin";
       color: white;
       transition-duration: 0.3s;
-      font-size: 2px;
+      font-size: 14px;
+    }
+    #Intestin:hover::before {
+    display: block;
     }
 
      #Cerveau::before {
@@ -142,7 +154,10 @@ body{
       content: "Cerveau";
       color: white;
       transition-duration: 0.3s;
-      font-size: 2px;
+      font-size: 14px;
+    }
+    #Cerveau:hover::before {
+    display: block;
     }
 
      #Estomac::before {
@@ -151,6 +166,9 @@ body{
       color: white;
       transition-duration: 0.3s;
       font-size: 2px;
+    }
+    #Estomac:hover::before {
+    display: block;
     }
 
     .btnJeu2:hover::before {
