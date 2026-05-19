@@ -140,7 +140,13 @@ Après
   function dropHandler(ev) {
     ev.preventDefault();
     let idMot = ev.dataTransfer.getData("text");
+<<<<<<< HEAD
+    let motElement = document.getElementById(idMot);
+
+    // Correction : ev.currentTarget pointe sur la boîte
+=======
     let motElement = document.querySelector(`[data-mot="${idMot}"]`);
+>>>>>>> 8b10a2b56b4db0f5061295575e45a381fea88ceb
     let dépose = ev.currentTarget;
   
     dépose.appendChild(motElement);

@@ -10,11 +10,6 @@
 	<title>Jeu 2 </title>
 	<link rel="stylesheet" href="style/style.css">
   <link rel="icon" type="image/png" href="images/biofusion.png">
-</head>
-
-
-<body>
-  
   <style>
 
 .image {
@@ -74,10 +69,25 @@
   left: 52%;   
 }
 
+ /* Zone d'affichage des questions sous l'image */
+    #quiz {
+      width: 600px;
+      margin: 20px auto;
+      padding: 15px;
+      background-color: #f9f9f9;
+      min-height: 100px;
+    }
+     .resultat {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    </style>
+</head>
 
-</style>
 
-<!-- Ceci crée une zone capable de recevoir un texte glissé avec l'événement ondrop et autorise le survol de la souris avec l'événement ondragover -->
+<body>
+  
+<!-- Ceci crée des boutons -->
 <!--Source : https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop_h1-->
 <div class="image"> 
   <button id="Coeur" class="btnJeu2" onclick="question1()"  value=""> <svg class="edit-svgIcon" viewBox="0 0 512 512">
@@ -86,27 +96,121 @@
   <button id="Poumon" class="btnJeu2"  onclick="question2()"  value=""> <svg class="edit-svgIcon" viewBox="0 0 512 512">
                     <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
                   </svg></button>
-  <button id="Estomac" class="btnJeu2" onclick="question2()"  value=""><svg class="edit-svgIcon" viewBox="0 0 512 512">
+  <button id="Estomac" class="btnJeu2" onclick="question3()"  value=""><svg class="edit-svgIcon" viewBox="0 0 512 512">
                     <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
                   </svg></button>
-  <button id="Rein" class="btnJeu2" onclick="question2()"  value=""><svg class="edit-svgIcon" viewBox="0 0 512 512">
+  <button id="Rein" class="btnJeu2" onclick="question4()"  value=""><svg class="edit-svgIcon" viewBox="0 0 512 512">
                     <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
                   </svg></button>
-  <button id="Intestin" class="btnJeu2" onclick="question2()"  value=""><svg class="edit-svgIcon" viewBox="0 0 512 512">
+  <button id="Intestin" class="btnJeu2" onclick="question5()"  value=""><svg class="edit-svgIcon" viewBox="0 0 512 512">
                     <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
                   </svg></button>
-  <button id="Cerveau" class="btnJeu2" onclick="question2()"  value=""><svg class="edit-svgIcon" viewBox="0 0 512 512">
+  <button id="Cerveau" class="btnJeu2" onclick="question6()"  value=""><svg class="edit-svgIcon" viewBox="0 0 512 512">
                     <path d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"></path>
                   </svg></button>
 </div>
 
 
-<script>
- function question1() {
-    
-  }
+<div id="quiz">Cliquez sur un organe pour afficher une question.
+</div>
+
   
+<script>
+  // ces fonctions affichent les questions dans la boitediv et les boutons pour valider propre à chacun
+function question1() {
+  document.getElementById("quiz").innerHTML = 
+    '<label>Laquelle n\'est pas une cavité du coeur ?</label><br>' +
+    '<input type="radio" name="QC" value="0"> Oreillette droite<br>' +
+    '<input type="radio" name="QC" value="0"> Oreillette gauche<br>' +
+    '<input type="radio" name="QC"value="1"> Oreillette du bas<br>' +
+    '<input type="radio" name="QC"value="0"> Ventricule gauche'+
+    '<br><br><input type="button" id="btnValider1" class="btnMenu"onclick="valider(\'QC\')" value="Valider">'+
+    '<div id="rep"></div>'
+
+}
+
+function question2() {
+  document.getElementById("quiz").innerHTML = 
+    '<label>Quel gaz inspirons-nous pour vivre ?</label><br>' +
+    '<input type="radio" name="QP" value="0"> Dioxyde de carbone<br>' +
+    '<input type="radio" name="QP" value="0"> Azote<br>' +
+    '<input type="radio" name="QP" value="0"> Hydrogène<br>' +
+    '<input type="radio" name="QP" value="1"> Oxygène'+
+    '<br><br><input type="button" id="btnValider1" class="btnMenu"onclick="valider(\'QP\')" value="Valider">'+
+    '<div id="rep"></div>'
+}
+
+function question3() {
+  document.getElementById("quiz").innerHTML = 
+    '<label>Comment appelle-t-on le liquide acide produit par l\'estomac ?</label><br>' +
+    '<input type="radio" name="QE" value="0"> la salive<br>' +
+    '<input type="radio" name="QE" value="1"> le suc gastrique<br>' +
+    '<input type="radio" name="QE" value="0"> la bile<br>' +
+    '<input type="radio" name="QE" value="0"> le suc pancréatique'+
+    '<br><br><input type="button" id="btnValider1" class="btnMenu"onclick="valider(\'QE\')" value="Valider">'+
+    '<div id="rep"></div>'
+}
+
+function question4() {
+  document.getElementById("quiz").innerHTML = 
+    '<label>Quelle est la fonction principale des reins ?</label><br>' +
+    '<input type="radio" name="QR" value="0"> Digérer les graisses<br>' +
+    '<input type="radio" name="QR" value="1"> Filtrer le sang<br>' +
+    '<input type="radio" name="QR" value="0"> Produire de l\'insuline<br>' +
+    '<input type="radio" name="QR" value="0"> Pomper le sang'+
+    '<br><br><input type="button" id="btnValider1" class="btnMenu"onclick="valider(\'QR\')" value="Valider">'+
+    '<div id="rep"></div>'
+}
+
+function question5() {
+  document.getElementById("quiz").innerHTML = 
+    '<label>Où se termine la digestion et l\'absorption des nutriments ?</label><br>' +
+    '<input type="radio" name="QI" value="1"> L\'intestin grêle<br>' +
+    '<input type="radio" name="QI" value="0"> Le gros intestin<br>' +
+    '<input type="radio" name="QI"value="0" > L\'œsophage<br>' +
+    '<input type="radio" name="QI" value="0"> Le foie'+
+    '<br><br><input type="button" id="btnValider1" class="btnMenu"onclick="valider(\'QI\')" value="Valider">' +
+    '<div id="rep"></div>'
+}
+
+function question6() {
+  document.getElementById("quiz").innerHTML = 
+    '<label>Quelle partie du cerveau gère l\'équilibre ?</label><br>' +
+    '<input type="radio" name="QCe" value="1"> Le cervelet<br>' +
+    '<input type="radio" name="QCe" value="0"> Le tronc cérébral<br>' +
+    '<input type="radio" name="QCe" value="0"> Le lobe frontal<br>' +
+    '<input type="radio" name="QCe" value="0"> L\'hippocampe'+
+    '<br><br><input type="button" id="btnValider1" class="btnMenu"onclick="valider(\'QCe\')" value="Valider">'+
+    '<div id="rep"></div>'
+}
+// Fonction unique pour valider n'importe quelle question
+function valider(nomQuestion) {
+  let options = document.getElementsByName(nomQuestion);
+  let selectionne = false;
+  let reponseCorrecte = false;
+
+  for (let i = 0; i < options.length; i++) {
+    if (options[i].checked) {
+      selectionne = true;
+      if (options[i].value == "1") {
+        reponseCorrecte = true;
+      }
+      break;
+    }
+  }
+
+  var divReponse = document.getElementById("rep");
+  if (!selectionne) {
+    divReponse.innerHTML = "<p class='resultat' style='color: orange;'>Veuillez sélectionner une réponse.</p>";
+  } else if (reponseCorrecte) {
+    divReponse.innerHTML = "<p class='resultat' style='color: #02ba39;'>Bonne réponse ";
+  } else {
+    divReponse.innerHTML = "<p class='resultat' style='color: #ba0202;'>Mauvaise réponse.";
+  }
+}
+
 </script>
+
 
 <button class="btnMenu" onclick="window.location.href='index.html'"><img src="https://cdn-icons-png.flaticon.com/512/5895/5895964.png" height="35px"></button>
 </body>
