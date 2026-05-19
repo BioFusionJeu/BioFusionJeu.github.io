@@ -1,113 +1,101 @@
 <!-- Page jeu 1 -->
 <!-- Par BioFusion-->
+ <!-- Changé par l'IA
+Avant
+#Coeur { ... }
+
+Après 
+[data-id="Coeur"] { ... } 
+-->
 
 <!DOCTYPE HTML>
 <html>
   
-  
 <head>
   <meta charset="UTF-8">
-	<title>Jeu 1 </title>
-	<link rel="stylesheet" href="style/style.css">
+  <title>Jeu 1</title>
+  <link rel="stylesheet" href="style/style.css">
   <link rel="icon" type="image/png" href="images/biofusion.png">
 </head>
-
 
 <body>
   
   <style>
 .image {
-  /* l'image de fond */
-  background-image: url("https://img.freepik.com/premium-vector/medical-education-chart-biology-human-body-organ-system-diagram-vector-illustration_742418-246.jpg");
-  
-  /* Pour que l'image couvre tout le conteneur sans se répéter */
+  background-image: url("images/corps.avif");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   position: relative; 
-  width: 100%;
-  
-   /* Ajustez à la taille de votre image */
   width: 700px;
   height: 900px;
-  margin: 0 auto; /* Centré l'image sur la page */
-  border: 0px
+  margin: 0 auto;
+  border: 0px;
 }
 
-/* placer tous les conteneurs à l'endroit voulu dans la page */
-#Coeur {
-  /* source : https://www.w3schools.com/css/css_position.asp */
-  position: absolute; /* ceci permet de placé la boite précisément où je veux*/
-  top: 45%;    /* Distance depuis le haut */
-  left: 53%;   /* Distance depuis la gauche */
-  width: 85px; /* Longueur de la boite */
-  height: 30px; /* Hauteur le la boite*/
-  border: 1px solid #333; /* taile de la bordure et couleur*/
-}
-
-#Poumon {
+[data-id="Coeur"] {
   position: absolute;
-  top: 48%;    
-  left: 27%;   
+  top: 45%;
+  left: 53%;
   width: 85px;
   height: 30px;
   border: 1px solid #333;
 }
 
-#Estomac {
+[data-id="Poumon"] {
   position: absolute;
-  top: 55%;   
-  left: 56%;  
+  top: 48%;
+  left: 27%;
   width: 85px;
   height: 30px;
   border: 1px solid #333;
 }
 
-#Rein {
+[data-id="Estomac"] {
   position: absolute;
-  top: 58%;    
-  left: 29%;  
+  top: 55%;
+  left: 56%;
   width: 85px;
   height: 30px;
   border: 1px solid #333;
 }
 
-#Intestin {
+[data-id="Rein"] {
   position: absolute;
-  top: 64%;    
-  left: 56%;   
+  top: 58%;
+  left: 29%;
   width: 85px;
   height: 30px;
   border: 1px solid #333;
 }
 
-#Cerveau {
+[data-id="Intestin"] {
   position: absolute;
-  top: 20%;    
-  left: 52%;   
+  top: 64%;
+  left: 56%;
   width: 85px;
   height: 30px;
   border: 1px solid #333;
 }
 
-/* Pour que les mots se déposent au milieu de la boite */
-/* Faits avec Claude AI */
+[data-id="Cerveau"] {
+  position: absolute;
+  top: 20%;
+  left: 52%;
+  width: 85px;
+  height: 30px;
+  border: 1px solid #333;
+}
+
 .deposer {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px dashed #000000 !important;
+  border: 2px dashed #000000;
   border-radius: 6px;
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255,255,255,0.6);
 }
 
-
-.deposer p {
-  margin: 0;
-  padding: 0;
-}
-
-/* Positionne les mots à gauche, verticalement centré */
 #mots {
   position: fixed;
   left: 20px;
@@ -117,9 +105,9 @@
   flex-direction: column;
   gap: 8px;
 }
-/* Ce code est faits par Claude AI */
+
 #mots p {
- margin: 0;
+  margin: 0;
   padding: 6px 10px;
   border: 2px solid #000000;
   border-radius: 8px;
@@ -128,25 +116,20 @@
   cursor: grab;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
+  </style>
 
-</style>
-
-<!-- Ceci crée une zone capable de recevoir un texte glissé avec l'événement ondrop et autorise le survol de la souris avec l'événement ondragover -->
-<!--Source : https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop_h1-->
-<div class="image"> 
-  <div id="Coeur" class="deposer" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
-  <div id="Poumon" class="deposer" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
-  <div id="Estomac" class="deposer" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
-  <div id="Rein" class="deposer" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
-  <div id="Intestin" class="deposer" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
-  <div id="Cerveau" class="deposer" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+<div class="image">
+  <div data-id="Coeur" class="deposer" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+  <div data-id="Poumon" class="deposer" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+  <div data-id="Estomac" class="deposer" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+  <div data-id="Rein" class="deposer" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+  <div data-id="Intestin" class="deposer" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
+  <div data-id="Cerveau" class="deposer" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
 </div>
 
-
 <script>
-  //source : https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop_h1
   function dragstartHandler(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
+    ev.dataTransfer.setData("text", ev.target.dataset.mot);
   }
   
   function dragoverHandler(ev) {
@@ -155,42 +138,36 @@
   
   function dropHandler(ev) {
     ev.preventDefault();
-    //  trouver l'ID du mot (par ex: "txtCoeur")
     let idMot = ev.dataTransfer.getData("text");
+<<<<<<< HEAD
     let motElement = document.getElementById(idMot);
 
     // Correction : ev.currentTarget pointe sur la boîte
+=======
+    let motElement = document.querySelector(`[data-mot="${idMot}"]`);
+>>>>>>> 8b10a2b56b4db0f5061295575e45a381fea88ceb
     let dépose = ev.currentTarget;
   
-    //pour que le mot se dépose dans la boîte
     dépose.appendChild(motElement);
   
-    
-    // regarde si l'ID du mot contient l'ID de la boîte (par ex: si "txtCoeur" contient "Coeur")
-    if (idMot.includes(dépose.id)) {
-      //pour ajouter un style dans la balise script on utilise .style
-      //source :  https://gomakethings.com/two-ways-to-set-an-elements-css-with-vanilla-javascript/
+    if (idMot.includes(dépose.dataset.id)) {
       dépose.style.border = "1px solid #02ba39";
-      motElement.style.color = "#02ba39"
-      
+      motElement.style.color = "#02ba39";
     } else {
-      dépose.style.border = "1px solid #ba0202"; // Rouge
-      motElement.style.color = "#ba0202"
+      dépose.style.border = "1px solid #ba0202";
+      motElement.style.color = "#ba0202";
     }
   }
 </script>
 
-<!-- Ceci crée un texte glissable avec un nom (par ex: "Poumon" qui déclenche la fonction "dragstartHandler" quand l'utilisateur commence à le glisser-->
-<!-- https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_draganddrop_h1 -->
 <div id="mots">
-  <p id="txtPoumon" draggable="true" ondragstart="dragstartHandler(event)">Poumon</p> 
-  <p id="txtCoeur" draggable="true" ondragstart="dragstartHandler(event)">Coeur</p>
-  <p id="txtIntestin" draggable="true" ondragstart="dragstartHandler(event)">Intestin</p>
-  <p id="txtRein" draggable="true" ondragstart="dragstartHandler(event)">Rein</p>
-  <p id="txtEstomac" draggable="true" ondragstart="dragstartHandler(event)">Estomac</p>
-  <p id="txtCerveau" draggable="true" ondragstart="dragstartHandler(event)">Cerveau</p>
+  <p data-mot="txtPoumon" draggable="true" ondragstart="dragstartHandler(event)">Poumon</p> 
+  <p data-mot="txtCoeur" draggable="true" ondragstart="dragstartHandler(event)">Coeur</p>
+  <p data-mot="txtIntestin" draggable="true" ondragstart="dragstartHandler(event)">Intestin</p>
+  <p data-mot="txtRein" draggable="true" ondragstart="dragstartHandler(event)">Rein</p>
+  <p data-mot="txtEstomac" draggable="true" ondragstart="dragstartHandler(event)">Estomac</p>
+  <p data-mot="txtCerveau" draggable="true" ondragstart="dragstartHandler(event)">Cerveau</p>
 </div>
 
-<button class="btnMenu" onclick="window.location.href='index.html'"><img src="https://cdn-icons-png.flaticon.com/512/5895/5895964.png" height="35px"></button>
 </body>
 </html>
