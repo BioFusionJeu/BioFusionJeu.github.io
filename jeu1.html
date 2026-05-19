@@ -159,7 +159,7 @@
     let idMot = ev.dataTransfer.getData("text");
     let motElement = document.getElementById(idMot);
 
-    // Correction : ev.currentTarget pointe toujours sur la boîte, pas sur un enfant
+    // Correction : ev.currentTarget pointe sur la boîte
     let dépose = ev.currentTarget;
   
     //pour que le mot se dépose dans la boîte
