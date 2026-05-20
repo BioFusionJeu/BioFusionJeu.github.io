@@ -15,17 +15,15 @@ Après
 <head>
   <meta charset="UTF-8">
   <title>Jeu 1</title>
-  <link rel="stylesheet" href="style/style.css">
-  <link rel="icon" type="image/png" href="images/biofusion.png">
+  <link rel="stylesheet" href="style1.css">
 </head>
 
 <body>
   <button class="btnMenu" onclick="window.location.href='index.html'"><img src="https://cdn-icons-png.flaticon.com/512/5895/5895964.png" height="35px"></button>
   <style>
-
-    body { background-color: #f0f0e8; }
+  body { background-color: #f0f0e8; }
 .image {
-  background-image: url("images/corps.avif");
+  background-image: url("https://img.freepik.com/premium-vector/medical-education-chart-biology-human-body-organ-system-diagram-vector-illustration_742418-246.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -120,6 +118,9 @@ Après
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
   </style>
+  
+  
+<h2 style="text-align:center;">Vies : <span id="vies">3</span> ❤️</h2>
 
 <div class="image">
   <div data-id="Coeur" class="deposer" ondrop="dropHandler(event)" ondragover="dragoverHandler(event)"></div>
@@ -131,6 +132,9 @@ Après
 </div>
 
 <script>
+  
+  let chances = 3;
+  
   function dragstartHandler(ev) {
     ev.dataTransfer.setData("text", ev.target.dataset.mot);
   }
@@ -153,6 +157,15 @@ Après
     } else {
       dépose.style.border = "1px solid #ba0202";
       motElement.style.color = "#ba0202";
+    
+     // On retire une chance
+      chances--;
+      document.getElementById("vies").innerText = chances;
+      
+      // Pop-up instantané si perdu
+      if (chances <= 0) {
+        window.location.href = "mort.html";
+      }
     }
   }
 </script>
