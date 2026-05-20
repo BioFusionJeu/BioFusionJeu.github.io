@@ -15,6 +15,9 @@ body{
       h1 {
         font-family: Arial;
       }
+
+      /* code CSS pour embellir les boutons du menu*/
+/* source : https://getcssscan.com/css-buttons-examples */
 .btnMenu {
         align-items: center;
         appearance: none;
