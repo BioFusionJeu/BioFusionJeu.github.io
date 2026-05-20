@@ -57,7 +57,7 @@ body{
         transform: translateY(2px);
       }
 
- /* pour les boutons du jeu 2 */
+      /* pour les boutons du jeu 2 */
       /* source : https://uiverse.io/adamgiebl/good-mouse-67 */
       .btnJeu2 {
       width: 40px;
@@ -178,4 +178,71 @@ body{
       opacity: 1;
       transform: translateY(0px);
       transition-duration: 0.3s;
+    }
+    
+    /*code css pour le boutons dans la page game over*/
+    /*source; https://uiverse.io/cssbuttons-io/stupid-impala-51*/
+    button.btn-rejouer { 
+      width: 150px; 
+      height: 50px; 
+      cursor: pointer; 
+      display: flex; 
+      align-items: center; 
+      background: #e62222; 
+      border: none; 
+      border-radius: 5px; 
+      box-shadow: 1px 1px 3px rgba(0,0,0,0.15); 
+      margin: 0 auto;
+      position: relative;
+      padding: 0;
+    }
+
+    button.btn-rejouer, button.btn-rejouer span { 
+      transition: 200ms; 
+    }
+
+    button.btn-rejouer .text { 
+      transform: translateX(25px); /* Ajusté pour centrer le mot "Réessayer" */
+      color: white; 
+      font-weight: bold; 
+      font-size: 16px;
+    }
+
+    button.btn-rejouer .icon { 
+      position: absolute; 
+      border-left: 1px solid #c41b1b; 
+      transform: translateX(110px); 
+      height: 40px; 
+      width: 40px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+    }
+
+    button.btn-rejouer svg { 
+      width: 18px; 
+      height: 18px;
+      fill: #eee; 
+    }
+
+    button.btn-rejouer:hover { 
+      background: #ff3636; 
+    }
+
+    button.btn-rejouer:hover .text { 
+      color: transparent; 
+    }
+
+    button.btn-rejouer:hover .icon { 
+      width: 150px; 
+      border-left: none; 
+      transform: translateX(0); 
+    }
+
+    button.btn-rejouer:focus { 
+      outline: none; 
+    }
+
+    button.btn-rejouer:active .icon svg { 
+      transform: scale(0.8); 
     }
