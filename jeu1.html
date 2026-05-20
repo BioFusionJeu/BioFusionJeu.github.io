@@ -19,7 +19,6 @@ Après
 </head>
 
 <body>
-  <!--Retourner à la page d'accueil-->
   <button class="btnMenu" onclick="window.location.href='index.html'"><img src="https://cdn-icons-png.flaticon.com/512/5895/5895964.png" height="35px"></button>
   <style>
   body { background-color: #f0f0e8; }
@@ -120,7 +119,7 @@ Après
 }
   </style>
   
- <!-- Affichage du nombre de vies --> 
+  
 <h2 style="text-align:center;">Vies : <span id="vies">3</span> ❤️</h2>
 
 <div class="image">
@@ -159,11 +158,11 @@ Après
       dépose.style.border = "1px solid #ba0202";
       motElement.style.color = "#ba0202";
     
-     // On retire une chance
+     // On enlève une chance
       chances--;
       document.getElementById("vies").innerText = chances;
       
-      // Pop-up instantané si perdu
+      // dirige vers la page gameover
       if (chances <= 0) {
         window.location.href = "mort.html";
       }
